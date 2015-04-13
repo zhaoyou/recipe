@@ -13,11 +13,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recipeId" rowHeight="57" id="Wmr-Qt-g8h">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recipeId" textLabel="70Z-fv-g0D" rowHeight="57" style="IBUITableViewCellStyleDefault" id="Wmr-Qt-g8h">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wmr-Qt-g8h" id="GdW-6b-ONo">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="70Z-fv-g0D">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="eB4-GD-rUy" kind="push" identifier="showDetail" id="buy-Ni-8rc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -30,6 +41,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAH-0H-Uco" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1224" y="-604"/>
+        </scene>
+        <!--Recipe Detail View Controller-->
+        <scene sceneID="tXi-ag-BzE">
+            <objects>
+                <viewController id="eB4-GD-rUy" customClass="RecipeDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Si0-Jc-aTO"/>
+                        <viewControllerLayoutGuide type="bottom" id="hco-FL-G0Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="viC-fy-zfb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="说明： " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9h-jK-lze">
+                                <rect key="frame" x="16" y="353" width="56" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="textGuide" text="猕猴桃含有丰富的膳食纤维、维生素C、维生素B、维生素D、钙、磷、钾等微量元素和矿物质。猕猴桃中的维生素C能干扰黑色素的形成，预防黑色素，保持皮肤白皙。但是并不是所有孕妈都适合，对于脾胃虚寒的孕妇来说，猕猴桃则不可多吃，否则容易腹泻。" translatesAutoresizingMaskIntoConstraints="NO" id="L0m-Gt-gU7">
+                                <rect key="frame" x="16" y="382" width="288" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="recipeImage" translatesAutoresizingMaskIntoConstraints="NO" id="zkz-lb-jPg">
+                                <rect key="frame" x="16" y="72" width="288" height="148"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="功效：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDc-cW-DdT">
+                                <rect key="frame" x="16" y="228" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="textBrief" text="猕猴桃含有丰富的维生素C、A以及钾、镁、纤维素之外，还含有其他水果比较少见的营养成分：叶酸等。" translatesAutoresizingMaskIntoConstraints="NO" id="cud-Y0-XYy">
+                                <rect key="frame" x="16" y="257" width="288" height="74"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QMx-U1-dBR"/>
+                    <connections>
+                        <outlet property="recipeImage" destination="zkz-lb-jPg" id="jRE-qV-MA8"/>
+                        <outlet property="textBrief" destination="cud-Y0-XYy" id="fk6-4a-UzU"/>
+                        <outlet property="textGuide" destination="L0m-Gt-gU7" id="GLN-vU-Ktn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m9K-qq-UDO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1609" y="-600"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -59,7 +123,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Yei-aL-GRn">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tabooId" id="Yei-aL-GRn">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yei-aL-GRn" id="WhY-CL-Spp">
                                     <autoresizingMask key="autoresizingMask"/>

@@ -7,6 +7,8 @@
 //
 
 #import "RecipeViewController.h"
+#import "UIImageView+AFNetworking.h"
+#import "RecipeDetailViewController.h"
 
 @interface RecipeViewController ()
 
@@ -54,7 +56,7 @@
                 NSArray *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
                 
                 if (!err) {
-                    NSLog(@"%@", jsonData);
+                   // NSLog(@"%@", jsonData);
                     self.recipes = jsonData;
                     
                     dispatch_sync(dispatch_get_main_queue(), ^{
@@ -76,6 +78,16 @@
     }] resume];
 }
 
+#pragma mark - Navigation
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showDetail"]) {
+        NSLog(@"prepareForSegue....");
+        RecipeDetailViewController *detail = (RecipeDetailViewController *) segue.destinationViewController;
+        NSDictionary *recipeData = self.recipes[[self.tableView indexPathForSelectedRow].row];
+        detail.recipeData = recipeData;
+    }
+}
 
 #pragma table datasource
 
@@ -103,36 +115,38 @@
     cell.textLabel.text = [data valueForKey:@"name"];
     NSURL *url = [NSURL URLWithString:[data valueForKey:@"imageSrc"]];
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+   // [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    NSLog(@"url: %@", url);
+  //  NSLog(@"url: %@", url);
+    
+    [cell.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"db3.jpg"]];
     
 //    UIImage *image = [UIImage imageNamed:@"db3.jpg"];
 //    cell.imageView.image  = image;
     
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    
-    cell.imageView.image = nil;
-    
-    dispatch_async(queue, ^{
-        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[data valueForKey:@"imageSrc"]]];
-        
-        if (imgData) {
-             UIImage *image = [UIImage imageWithData:imgData];
-            if (image) {
-                dispatch_sync(dispatch_get_main_queue(), ^{
-                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                    UITableViewCell *originCell = (id) [self.tableView cellForRowAtIndexPath:indexPath];
-                    originCell.imageView.image = image;
-                    NSLog(@"%@", originCell);
-                });
-            } else {
-                NSLog(@"image error");
-            }
-        } else {
-            NSLog(@"imageData Error");
-        }
-    });
+//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    
+//    cell.imageView.image = nil;
+//    
+//    dispatch_async(queue, ^{
+//        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[data valueForKey:@"imageSrc"]]];
+//        
+//        if (imgData) {
+//             UIImage *image = [UIImage imageWithData:imgData];
+//            if (image) {
+//                dispatch_sync(dispatch_get_main_queue(), ^{
+//                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//                    UITableViewCell *originCell = (id) [self.tableView cellForRowAtIndexPath:indexPath];
+//                    originCell.imageView.image = image;
+//                    NSLog(@"%@", originCell);
+//                });
+//            } else {
+//                NSLog(@"image error");
+//            }
+//        } else {
+//            NSLog(@"imageData Error");
+//        }
+//    });
     return cell;
 }
 
