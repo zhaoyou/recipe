@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 zhaoyou. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "TaboosViewController.h"
 
-@interface SecondViewController ()
+@interface TaboosViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation TaboosViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180650D51AD97B6200407E81 /* db3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 180650D41AD97B6200407E81 /* db3.jpg */; };
 		183BE58C1AD5767C00408855 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 183BE58B1AD5767C00408855 /* main.m */; };
 		183BE58F1AD5767C00408855 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 183BE58E1AD5767C00408855 /* AppDelegate.m */; };
-		183BE5921AD5767C00408855 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183BE5911AD5767C00408855 /* FirstViewController.m */; };
-		183BE5951AD5767C00408855 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183BE5941AD5767C00408855 /* SecondViewController.m */; };
+		183BE5921AD5767C00408855 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183BE5911AD5767C00408855 /* RecipeViewController.m */; };
+		183BE5951AD5767C00408855 /* TaboosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183BE5941AD5767C00408855 /* TaboosViewController.m */; };
 		183BE5981AD5767C00408855 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183BE5961AD5767C00408855 /* Main.storyboard */; };
 		183BE59A1AD5767C00408855 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183BE5991AD5767C00408855 /* Images.xcassets */; };
 		183BE59D1AD5767C00408855 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183BE59B1AD5767C00408855 /* LaunchScreen.xib */; };
@@ -28,15 +29,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180650D41AD97B6200407E81 /* db3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = db3.jpg; path = "../../../../Pictures/recipe/recipe-list/db3.jpg"; sourceTree = "<group>"; };
 		183BE5861AD5767C00408855 /* Recipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		183BE58A1AD5767C00408855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		183BE58B1AD5767C00408855 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		183BE58D1AD5767C00408855 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		183BE58E1AD5767C00408855 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		183BE5901AD5767C00408855 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		183BE5911AD5767C00408855 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		183BE5931AD5767C00408855 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		183BE5941AD5767C00408855 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		183BE5901AD5767C00408855 /* RecipeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
+		183BE5911AD5767C00408855 /* RecipeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
+		183BE5931AD5767C00408855 /* TaboosViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaboosViewController.h; sourceTree = "<group>"; };
+		183BE5941AD5767C00408855 /* TaboosViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaboosViewController.m; sourceTree = "<group>"; };
 		183BE5971AD5767C00408855 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		183BE5991AD5767C00408855 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		183BE59C1AD5767C00408855 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -86,10 +88,10 @@
 			children = (
 				183BE58D1AD5767C00408855 /* AppDelegate.h */,
 				183BE58E1AD5767C00408855 /* AppDelegate.m */,
-				183BE5901AD5767C00408855 /* FirstViewController.h */,
-				183BE5911AD5767C00408855 /* FirstViewController.m */,
-				183BE5931AD5767C00408855 /* SecondViewController.h */,
-				183BE5941AD5767C00408855 /* SecondViewController.m */,
+				183BE5901AD5767C00408855 /* RecipeViewController.h */,
+				183BE5911AD5767C00408855 /* RecipeViewController.m */,
+				183BE5931AD5767C00408855 /* TaboosViewController.h */,
+				183BE5941AD5767C00408855 /* TaboosViewController.m */,
 				183BE5961AD5767C00408855 /* Main.storyboard */,
 				183BE5991AD5767C00408855 /* Images.xcassets */,
 				183BE59B1AD5767C00408855 /* LaunchScreen.xib */,
@@ -101,6 +103,7 @@
 		183BE5891AD5767C00408855 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				180650D41AD97B6200407E81 /* db3.jpg */,
 				183BE58A1AD5767C00408855 /* Info.plist */,
 				183BE58B1AD5767C00408855 /* main.m */,
 			);
@@ -207,6 +210,7 @@
 				183BE5981AD5767C00408855 /* Main.storyboard in Resources */,
 				183BE59D1AD5767C00408855 /* LaunchScreen.xib in Resources */,
 				183BE59A1AD5767C00408855 /* Images.xcassets in Resources */,
+				180650D51AD97B6200407E81 /* db3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,9 +228,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				183BE5951AD5767C00408855 /* SecondViewController.m in Sources */,
+				183BE5951AD5767C00408855 /* TaboosViewController.m in Sources */,
 				183BE58F1AD5767C00408855 /* AppDelegate.m in Sources */,
-				183BE5921AD5767C00408855 /* FirstViewController.m in Sources */,
+				183BE5921AD5767C00408855 /* RecipeViewController.m in Sources */,
 				183BE58C1AD5767C00408855 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +422,7 @@
 				183BE5AE1AD5767C00408855 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		183BE5AF1AD5767C00408855 /* Build configuration list for PBXNativeTarget "RecipeTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +431,7 @@
 				183BE5B11AD5767C00408855 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
