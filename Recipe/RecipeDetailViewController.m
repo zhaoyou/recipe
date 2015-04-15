@@ -22,7 +22,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     if (self.recipeData) {
-        NSLog(@"recipeData: %@", self.recipeData);
         self.textBrief.text = [self.recipeData valueForKey:@"brief"];
         self.textGuide.text = [self.recipeData valueForKey:@"guide"];
         self.title = [self.recipeData valueForKey:@"name"];

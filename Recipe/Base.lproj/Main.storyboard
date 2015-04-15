@@ -60,29 +60,40 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="textGuide" text="猕猴桃含有丰富的膳食纤维、维生素C、维生素B、维生素D、钙、磷、钾等微量元素和矿物质。猕猴桃中的维生素C能干扰黑色素的形成，预防黑色素，保持皮肤白皙。但是并不是所有孕妈都适合，对于脾胃虚寒的孕妇来说，猕猴桃则不可多吃，否则容易腹泻。" translatesAutoresizingMaskIntoConstraints="NO" id="L0m-Gt-gU7">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" restorationIdentifier="textGuide" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0m-Gt-gU7">
                                 <rect key="frame" x="16" y="382" width="288" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="recipeImage" translatesAutoresizingMaskIntoConstraints="NO" id="zkz-lb-jPg">
-                                <rect key="frame" x="16" y="72" width="288" height="148"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" restorationIdentifier="recipeImage" translatesAutoresizingMaskIntoConstraints="NO" id="zkz-lb-jPg">
+                                <rect key="frame" x="16" y="72" width="288" height="141"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" restorationIdentifier="textBrief" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cud-Y0-XYy">
+                                <rect key="frame" x="16" y="257" width="288" height="74"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="功效：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fo5-xF-QXh">
+                                <rect key="frame" x="16" y="228" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="功效：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDc-cW-DdT">
                                 <rect key="frame" x="16" y="228" width="51" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="textBrief" text="猕猴桃含有丰富的维生素C、A以及钾、镁、纤维素之外，还含有其他水果比较少见的营养成分：叶酸等。" translatesAutoresizingMaskIntoConstraints="NO" id="cud-Y0-XYy">
-                                <rect key="frame" x="16" y="257" width="288" height="74"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="L0m-Gt-gU7" secondAttribute="centerX" id="D2R-u7-DGO"/>
+                            <constraint firstAttribute="centerX" secondItem="zkz-lb-jPg" secondAttribute="centerX" id="XFV-7P-mSE"/>
+                            <constraint firstAttribute="centerX" secondItem="cud-Y0-XYy" secondAttribute="centerX" id="abd-uc-36s"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QMx-U1-dBR"/>
                     <connections>
@@ -114,7 +125,7 @@
             </objects>
             <point key="canvasLocation" x="-160" y="-48"/>
         </scene>
-        <!--Taboos View Controller-->
+        <!--禁忌食物排行-->
         <scene sceneID="T1E-B6-hvq">
             <objects>
                 <tableViewController id="EhU-Ia-NOe" customClass="TaboosViewController" sceneMemberID="viewController">
@@ -123,10 +134,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tabooId" id="Yei-aL-GRn">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tabooId" textLabel="7Np-Zn-2jJ" style="IBUITableViewCellStyleDefault" id="Yei-aL-GRn">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yei-aL-GRn" id="WhY-CL-Spp">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Np-Zn-2jJ">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -135,11 +154,29 @@
                             <outlet property="delegate" destination="EhU-Ia-NOe" id="ofh-ht-BST"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="RkF-dc-d3z"/>
+                    <navigationItem key="navigationItem" title="禁忌食物排行" id="RkF-dc-d3z"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NT5-hz-c0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1079" y="65"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hTJ-JP-F4D">
+            <objects>
+                <viewController id="l89-E8-jKT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4AP-BS-l8B"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Pn-jX-lB6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Jm-bW-vio">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LRD-oJ-9fn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1569" y="36"/>
         </scene>
         <!--营养食谱-->
         <scene sceneID="Lz5-pC-8wR">

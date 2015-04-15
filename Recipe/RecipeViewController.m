@@ -82,7 +82,6 @@
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"showDetail"]) {
-        NSLog(@"prepareForSegue....");
         RecipeDetailViewController *detail = (RecipeDetailViewController *) segue.destinationViewController;
         NSDictionary *recipeData = self.recipes[[self.tableView indexPathForSelectedRow].row];
         detail.recipeData = recipeData;

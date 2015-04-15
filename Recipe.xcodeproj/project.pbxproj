@@ -16,6 +16,7 @@
 		183BE59A1AD5767C00408855 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183BE5991AD5767C00408855 /* Images.xcassets */; };
 		183BE59D1AD5767C00408855 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183BE59B1AD5767C00408855 /* LaunchScreen.xib */; };
 		183BE5A91AD5767C00408855 /* RecipeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 183BE5A81AD5767C00408855 /* RecipeTests.m */; };
+		185540301ADD64400092BB3B /* TaboosDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1855402F1ADD64400092BB3B /* TaboosDetailViewController.m */; };
 		18DA966E1ADC13DF00E7B376 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DA966D1ADC13DF00E7B376 /* RecipeDetailViewController.m */; };
 		2E56C5EBE66A91668181FA27 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81504D25F3DC251C477D7F6B /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,8 @@
 		183BE5A21AD5767C00408855 /* RecipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		183BE5A71AD5767C00408855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		183BE5A81AD5767C00408855 /* RecipeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeTests.m; sourceTree = "<group>"; };
+		1855402E1ADD64400092BB3B /* TaboosDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaboosDetailViewController.h; sourceTree = "<group>"; };
+		1855402F1ADD64400092BB3B /* TaboosDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaboosDetailViewController.m; sourceTree = "<group>"; };
 		18DA966C1ADC13DF00E7B376 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
 		18DA966D1ADC13DF00E7B376 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
 		7C31527E276F153860F96F84 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				183BE5911AD5767C00408855 /* RecipeViewController.m */,
 				18DA966C1ADC13DF00E7B376 /* RecipeDetailViewController.h */,
 				18DA966D1ADC13DF00E7B376 /* RecipeDetailViewController.m */,
+				1855402E1ADD64400092BB3B /* TaboosDetailViewController.h */,
+				1855402F1ADD64400092BB3B /* TaboosDetailViewController.m */,
 				183BE5931AD5767C00408855 /* TaboosViewController.h */,
 				183BE5941AD5767C00408855 /* TaboosViewController.m */,
 				183BE5961AD5767C00408855 /* Main.storyboard */,
@@ -295,6 +300,7 @@
 				183BE5951AD5767C00408855 /* TaboosViewController.m in Sources */,
 				183BE58F1AD5767C00408855 /* AppDelegate.m in Sources */,
 				183BE5921AD5767C00408855 /* RecipeViewController.m in Sources */,
+				185540301ADD64400092BB3B /* TaboosDetailViewController.m in Sources */,
 				18DA966E1ADC13DF00E7B376 /* RecipeDetailViewController.m in Sources */,
 				183BE58C1AD5767C00408855 /* main.m in Sources */,
 			);
