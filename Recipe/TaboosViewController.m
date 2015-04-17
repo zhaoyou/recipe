@@ -8,6 +8,7 @@
 
 #import "TaboosViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "TaboosDetailViewController.h"
 
 
 @interface TaboosViewController ()
@@ -58,7 +59,7 @@
                 NSArray *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
                 
                 if (!err) {
-                    // NSLog(@"%@", jsonData);
+                    //NSLog(@"taboos: %@", jsonData);
                     self.taboos = jsonData;
                     
                     dispatch_sync(dispatch_get_main_queue(), ^{
@@ -105,7 +106,10 @@
     }
     
     NSDictionary *data = [self.taboos objectAtIndex:indexPath.row];
-    cell.textLabel.text = [data valueForKey:@"name"];
+    cell.textLabel.text = [data valueForKey:@"title"];
+    NSArray *items = (NSArray *)[data valueForKey:@"items"];
+    cell.detailTextLabel.text = [items componentsJoinedByString:@","];
+    
     NSURL *url = [NSURL URLWithString:[data valueForKey:@"imageSrc"]];
     
     // [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -116,6 +120,14 @@
     
 
     return cell;
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showTaboo"]) {
+        TaboosDetailViewController *detailVC = (TaboosDetailViewController *)segue.destinationViewController;
+        detailVC.taboosData = [self.taboos objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+    }
 }
 
 

@@ -10,4 +10,5 @@
 
 @interface TaboosDetailViewController : UIViewController
 
+@property (nonatomic, strong) NSDictionary *taboosData;
 @end
