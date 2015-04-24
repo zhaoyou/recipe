@@ -33,7 +33,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //self.tabBarController.tabBar.translucent  = NO;
+    //self.edgesForExtendedLayout = UIRectEdgeNone;
     // Do any additional setup after loading the view, typically from a nib.
+//    self.edgesForExtendedLayout = UIRectEdgeAll;
+//    self.tableView.contentInset = UIEdgeInsetsMake(0., 0., CGRectGetHeight(self.tabBarController.tabBar.frame), 0);
     [self fetchRecipe];
 }
 
@@ -112,6 +116,7 @@
     
     NSDictionary *data = [self.recipes objectAtIndex:indexPath.row];
     cell.textLabel.text = [data valueForKey:@"name"];
+    cell.detailTextLabel.text = [data valueForKey:@"brief"];
     NSURL *url = [NSURL URLWithString:[data valueForKey:@"imageSrc"]];
     
    // [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
