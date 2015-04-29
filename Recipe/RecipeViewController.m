@@ -38,6 +38,9 @@
     // Do any additional setup after loading the view, typically from a nib.
 //    self.edgesForExtendedLayout = UIRectEdgeAll;
 //    self.tableView.contentInset = UIEdgeInsetsMake(0., 0., CGRectGetHeight(self.tabBarController.tabBar.frame), 0);
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.recipes = [[NSArray alloc] init];
     [self fetchRecipe];
 }
 
@@ -46,7 +49,7 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     // NSURL
-    NSURL *downloadUrl = [NSURL URLWithString:@"http://127.0.0.1:3000/api/recipes"];
+    NSURL *downloadUrl = [NSURL URLWithString:@"http://192.168.0.131:3000/api/recipes"];
     
     [[self.session dataTaskWithURL:downloadUrl completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (!error) {
@@ -62,7 +65,7 @@
                 if (!err) {
                    // NSLog(@"%@", jsonData);
                     self.recipes = jsonData;
-                    
+                    NSLog(@"recipes count %ld", [self.recipes count]);
                     dispatch_sync(dispatch_get_main_queue(), ^{
                         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                         [self.tableView reloadData];
@@ -96,7 +99,9 @@
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.recipes count];
+    NSLog(@"numberOfRowsInSection %ld", [self.recipes count]);
+    //return [self.recipes count];
+    return _recipes.count;
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
@@ -110,47 +115,18 @@
     
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:kCustomCellID];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:kCustomCellID];
-    }
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:kCustomCellID];
+//    }
     
     NSDictionary *data = [self.recipes objectAtIndex:indexPath.row];
     cell.textLabel.text = [data valueForKey:@"name"];
     cell.detailTextLabel.text = [data valueForKey:@"brief"];
     NSURL *url = [NSURL URLWithString:[data valueForKey:@"imageSrc"]];
     
-   // [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
-  //  NSLog(@"url: %@", url);
-    
     [cell.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"db3.jpg"]];
     
-//    UIImage *image = [UIImage imageNamed:@"db3.jpg"];
-//    cell.imageView.image  = image;
-    
-//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-//    
-//    cell.imageView.image = nil;
-//    
-//    dispatch_async(queue, ^{
-//        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[data valueForKey:@"imageSrc"]]];
-//        
-//        if (imgData) {
-//             UIImage *image = [UIImage imageWithData:imgData];
-//            if (image) {
-//                dispatch_sync(dispatch_get_main_queue(), ^{
-//                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-//                    UITableViewCell *originCell = (id) [self.tableView cellForRowAtIndexPath:indexPath];
-//                    originCell.imageView.image = image;
-//                    NSLog(@"%@", originCell);
-//                });
-//            } else {
-//                NSLog(@"image error");
-//            }
-//        } else {
-//            NSLog(@"imageData Error");
-//        }
-//    });
+    NSLog(@" tableView cellForRow...");
     return cell;
 }
 

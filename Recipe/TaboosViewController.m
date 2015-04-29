@@ -13,7 +13,7 @@
 
 @interface TaboosViewController ()
 
-@property (nonatomic, strong) NSArray *taboos;
+@property (nonatomic, strong) NSMutableArray *taboos;
 @property (nonatomic, strong) NSURLSession *session;
 
 @end
@@ -45,7 +45,7 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     // NSURL
-    NSURL *downloadUrl = [NSURL URLWithString:@"http://127.0.0.1:3000/api/taboos"];
+    NSURL *downloadUrl = [NSURL URLWithString:@"http://192.168.0.131:3000/api/taboos"];
     
     [[self.session dataTaskWithURL:downloadUrl completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (!error) {
@@ -56,12 +56,12 @@
                 
                 NSError *err;
                 
-                NSArray *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
+                NSMutableArray *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
                 
                 if (!err) {
                     //NSLog(@"taboos: %@", jsonData);
                     self.taboos = jsonData;
-                    
+                    NSLog(@"taboos count: %ld", [self.taboos count]);
                     dispatch_sync(dispatch_get_main_queue(), ^{
                         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                         [self.tableView reloadData];
@@ -87,6 +87,7 @@
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    NSLog(@"numberOfRowsInSection %ld", [self.taboos count]);
     return [self.taboos count];
 }
 
@@ -118,7 +119,7 @@
     
     [cell.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"db3.jpg"]];
     
-
+    NSLog(@" tableView cellForRow...");
     return cell;
 }
 

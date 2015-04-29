@@ -39,8 +39,8 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="IIQ-8q-19f" id="b0w-oc-P1b"/>
-                            <outlet property="delegate" destination="IIQ-8q-19f" id="ALx-nb-6pw"/>
+                            <outlet property="dataSource" destination="IIQ-8q-19f" id="SSg-dz-9IL"/>
+                            <outlet property="delegate" destination="IIQ-8q-19f" id="6Ie-D7-oft"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="营养食谱列表" id="pWT-jx-Gba"/>
@@ -67,9 +67,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="recipeImage" translatesAutoresizingMaskIntoConstraints="NO" id="zkz-lb-jPg">
-                                <rect key="frame" x="16" y="72" width="288" height="141"/>
-                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="textBrief" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cud-Y0-XYy">
                                 <rect key="frame" x="16" y="257" width="288" height="74"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,8 +91,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" restorationIdentifier="recipeImage" translatesAutoresizingMaskIntoConstraints="NO" id="zkz-lb-jPg">
+                                <rect key="frame" x="0.0" y="72" width="320" height="100"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="zkz-lb-jPg" secondAttribute="width" id="nfi-xg-C0o"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QMx-U1-dBR"/>
                     <connections>
@@ -224,11 +227,11 @@
             </objects>
             <point key="canvasLocation" x="1528" y="65"/>
         </scene>
-        <!--营养食谱-->
+        <!--食谱-->
         <scene sceneID="Lz5-pC-8wR">
             <objects>
                 <navigationController id="udy-lw-pa2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="营养食谱" id="ebi-tv-D17"/>
+                    <tabBarItem key="tabBarItem" title="食谱" image="Cooking Pot-32" id="ebi-tv-D17"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lQ9-qv-gka">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -247,7 +250,7 @@
         <scene sceneID="A54-Fw-mi2">
             <objects>
                 <navigationController id="A6b-Zs-bSm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="孕妇禁忌" id="CCv-uA-ILg"/>
+                    <tabBarItem key="tabBarItem" title="孕妇禁忌" image="Tea-32" id="CCv-uA-ILg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WBt-Zf-fR2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -263,6 +266,10 @@
             <point key="canvasLocation" x="547" y="65"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Cooking Pot-32" width="32" height="32"/>
+        <image name="Tea-32" width="32" height="32"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
